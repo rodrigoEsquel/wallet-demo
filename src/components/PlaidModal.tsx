@@ -29,7 +29,7 @@ export default function PlaidModal() {
 
   const createProcesorToken = useCallback(
     async (successResponse: LinkSuccess) => {
-      fetch('https://yourserver.com/exchange_public_token', {
+      fetch('http://localhost:5000/api/token/create-processor-token', {
         method: 'POST',
         body: JSON.stringify({
           publicToken: successResponse.publicToken,
@@ -43,13 +43,14 @@ export default function PlaidModal() {
   useEffect(() => {
     if (linkToken == null) {
       createLinkToken({ userId: '1' });
+      console.log(linkToken);
     }
   }, [linkToken]);
 
   return (
     <View style={{ flex: 1 }}>
       <PlaidLink
-        tokenConfig={{ token: linkToken, noLoadingState: true }}
+        tokenConfig={{ token: linkToken, noLoadingState: false }}
         onSuccess={(successResponse: LinkSuccess) =>
           createProcesorToken(successResponse)
         }

@@ -13,9 +13,33 @@ function applyPackage(mainApplication) {
     }
     return mainApplication;
 }
+function applyImplementation(appBuildGradle) {
+    var plaidImplementation = "implementation project(':react-native-plaid-link-sdk')";
+    // Make sure the project does not have the dependency already
+    if (!appBuildGradle.includes(plaidImplementation)) {
+        return appBuildGradle.replace(/dependencies\s?{/, "dependencies {\n      ".concat(plaidImplementation));
+    }
+    return appBuildGradle;
+}
+function applySettings(gradleSettings) {
+    var plaidSettings = "include ':react-native-plaid-link-sdk'\n    project(':react-native-plaid-link-sdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-plaid-link-sdk/android')";
+    // Make sure the project does not have the settings already
+    if (!gradleSettings.includes("include ':react-native-plaid-link-sdk'")) {
+        return gradleSettings + plaidSettings;
+    }
+    return gradleSettings;
+}
 var withAndroidPlaid = function (expoConfig) {
     expoConfig = (0, config_plugins_1.withMainApplication)(expoConfig, function (config) {
         config.modResults.contents = applyPackage(config.modResults.contents);
+        return config;
+    });
+    expoConfig = (0, config_plugins_1.withAppBuildGradle)(expoConfig, function (config) {
+        config.modResults.contents = applyImplementation(config.modResults.contents);
+        return config;
+    });
+    expoConfig = (0, config_plugins_1.withSettingsGradle)(expoConfig, function (config) {
+        config.modResults.contents = applySettings(config.modResults.contents);
         return config;
     });
     return expoConfig;

@@ -14,7 +14,7 @@ export default function PlaidModal() {
   };
 
   const createLinkToken = async (userDetails: { userId: string }) => {
-    addStep('Fetch Link Token to ' + IP + ':' + PORT);
+    addStep('Fetch Link Token from ' + IP + ':' + PORT);
     try {
       const response = await fetch(
         `http://${IP}:${PORT}/api/token/create-link-token`,

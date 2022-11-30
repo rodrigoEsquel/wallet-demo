@@ -27,3 +27,16 @@ sdk.dir=C:\\Users\\username\\AppData\\Local\\Android\\Sdk
 In android/app/build.gradle define the compileSdkVersion. ej:
 compileSdkVersion 31
 
+### build package again
+
+npm run android
+
+#### Possible error
+
+if Native Module PlaidAndroid error appears in the builded app:
+
+In the MainApplication.java file deletethe lines
+
+- import com.plaid.PlaidPackage;
+- packages.add(new PlaidPackage());
+

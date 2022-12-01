@@ -40,3 +40,44 @@ In the MainApplication.java file deletethe lines
 - import com.plaid.PlaidPackage;
 - packages.add(new PlaidPackage());
 
+## install sumsub SDK
+
+yarn add @sumsub/react-native-mobilesdk-module
+
+### fix problems
+
+#### :app:mergeDebugJavaResource
+
+> A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction
+> 2 files found with path 'org/bouncycastle/x509/CertPathReviewerMessages_de.properties' from inputs:
+
+      - C:\Users\...\.gradle\caches\transforms-3\702be7c9acef11ca9243c0021f75dc76\transformed\jetified-bcprov-jdk15to18-1.69.jar
+      - C:\Users\...\.gradle\caches\transforms-3\57ef2bc223db4c821efada5fdafa303c\transformed\jetified-bcprov-jdk18on-1.71.jar
+
+##### Solucion
+
+Agregar en android/app/build.gradle agregar dentro de android
+
+android {
+//
+configurations {
+all*.exclude module: 'bcprov-jdk15to18'
+all*.exclude module: 'bcprov-jdk18on'
+}
+//
+}
+
+#### app:checkDebugDuplicateClasses
+
+##### Solucion
+
+Agregar en android/app/build.gradle agregar dentro de android
+
+dependencies {
+//
+implementation (project(':sumsub_react-native-mobilesdk-module')) {
+exclude group: "org.bouncycastle", module: "bcutil-jdk15to18"
+exclude group: "org.bouncycastle", module: "bcutil-jdk18on"
+}
+//
+}

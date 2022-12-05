@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, Linking } from 'react-native';
 import PlaidModal from './src/components/PlaidModal';
+import WireWidget from './src/components/WyreWidget/WyreWidget';
+import InAppBrowser from './src/components/InAppBrowser';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <WireWidget />
       <PlaidModal />
     </View>
   );
@@ -15,7 +18,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 });
-

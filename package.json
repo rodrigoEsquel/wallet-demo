@@ -19,7 +19,8 @@
     "react-native": "0.70.5",
     "react-native-inappbrowser-reborn": "^3.7.0",
     "react-native-plaid-link-sdk": "^8.0.1",
-    "react-native-web": "~0.18.9"
+    "react-native-web": "~0.18.9",
+    "twrnc": "^3.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

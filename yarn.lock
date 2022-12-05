@@ -7568,6 +7568,11 @@
     "is-docker" "^2.1.1"
     "is-wsl" "^2.2.0"
 
+"opencollective-postinstall@^2.0.3":
+  "integrity" "sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q=="
+  "resolved" "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
+  "version" "2.0.3"
+
 "opn@^5.5.0":
   "integrity" "sha512-PqHpggC9bLV0VeWcdKhkpxY+3JTzetLSqTCWL/z/tFIbI6G8JCjondXklT1JinczLz2Xib62sSp0T/gKT4KksA=="
   "resolved" "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz"
@@ -8583,6 +8588,14 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz"
   "version" "0.70.3"
 
+"react-native-inappbrowser-reborn@^3.7.0":
+  "integrity" "sha512-Ia53jYNtFcbNaX5W3QfOmN25I7bcvuDiQmSY5zABXjy4+WI20bPc9ua09li55F8yDCjv3C99jX6vKms68mBV7g=="
+  "resolved" "https://registry.npmjs.org/react-native-inappbrowser-reborn/-/react-native-inappbrowser-reborn-3.7.0.tgz"
+  "version" "3.7.0"
+  dependencies:
+    "invariant" "^2.2.4"
+    "opencollective-postinstall" "^2.0.3"
+
 "react-native-plaid-link-sdk@^8.0.1":
   "integrity" "sha512-feKnqx3PY738LwqmiGRhJ1Dxn2tDdEOScS3CLemfNvM94jylHCkOZSmFn5SwP/IcB5pVgqlR/pnbhTQT3cPgSA=="
   "resolved" "https://registry.npmjs.org/react-native-plaid-link-sdk/-/react-native-plaid-link-sdk-8.0.1.tgz"
@@ -8601,7 +8614,7 @@
     "postcss-value-parser" "^4.2.0"
     "styleq" "^0.1.2"
 
-"react-native@>=0.61", "react-native@0.70.5":
+"react-native@>=0.56", "react-native@>=0.61", "react-native@0.70.5":
   "integrity" "sha512-5NZM80LC3L+TIgQX/09yiyy48S73wMgpIgN5cCv3XTMR394+KpDI3rBZGH4aIgWWuwijz31YYVF5504+9n2Zfw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.70.5.tgz"
   "version" "0.70.5"

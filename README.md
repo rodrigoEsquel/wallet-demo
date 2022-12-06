@@ -40,3 +40,12 @@ In the MainApplication.java file deletethe lines
 - import com.plaid.PlaidPackage;
 - packages.add(new PlaidPackage());
 
+#### Possible error 2
+
+If BuildConfig error appears during build:
+
+- Make sure your java package names are correct (MainApplication.java etc.)
+- update the package name in the gradle build file
+- update the package name in the manifest file
+- update the package name in the BUCK file
+- make sure the path to you javascript sources is a folder structure that matches your package name

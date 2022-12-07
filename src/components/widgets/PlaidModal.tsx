@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { View, Button, Text, FlatList } from 'react-native';
 import { PlaidLink, LinkSuccess } from 'react-native-plaid-link-sdk';
 
-const IP = process.env.IP || '192.168.0.25';
-const PORT = process.env.PORT || '5000';
+const IP = '192.168.0.191';
+const PORT = '5000';
 
 export default function PlaidModal() {
   const [linkToken, setLinkToken] = useState('empty token');

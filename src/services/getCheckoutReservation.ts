@@ -1,5 +1,5 @@
-const IP = process.env.IP || '192.168.0.25';
-const PORT = process.env.PORT || '5000';
+const IP = '192.168.0.191';
+const PORT = '5000';
 
 export const getCheckoutReservation = async (
   userId: string,
@@ -22,4 +22,3 @@ export const getCheckoutReservation = async (
     throw new Error('Fetch failed to ' + IP + ':' + PORT);
   }
 };
-

@@ -1,0 +1,22 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "parser": "typescript",
+    "importOrder": [
+      "^[./]",
+      "^@expo/(.*)$",
+      "^@/(.*)$",
+      "^@constants/(.*)$",
+      "^@hooks/(.*)$",
+      "^@components/(.*)$",
+      "^@navigation/(.*)$",
+      "^@screens/(.*)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderParserPlugins": [
+      "typescript",
+      "classProperties",
+      "[\"decorators-legacy\", { \"decoratorsBeforeExport\": true }]"
+    ]
+  }

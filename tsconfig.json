@@ -1,8 +1,47 @@
 {
   "extends": "expo/tsconfig.base",
+  "allowSyntheticDefaultImports": true,
+  "jsx": "react-native",
+  "lib": [
+    "dom",
+    "esnext"
+  ],
+  "include": [
+    "./src/**/*",
+    "./App.tsx"
+  ],
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true,
+  "moduleResolution": "node",
+  "module": "commonjs",
+  "noEmit": true,
+  "target": "es6",
+  "skipLibCheck": true,
+  "resolveJsonModule": true,
+  "strict": true,
+  "baseUrl": ".",
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-native"
+    "module": "es6",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@navigation/*": [
+        "./src/navigation/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
+      "@*": [
+        "./*"
+      ]
+    }
   }
 }
-

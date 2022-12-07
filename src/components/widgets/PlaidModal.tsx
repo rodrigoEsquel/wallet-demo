@@ -63,7 +63,7 @@ export default function PlaidModal() {
     <View>
       <Button
         title="Get Token"
-        onPress={() => createLinkToken({ userId: '1' })}
+        onPress={async () => await createLinkToken({ userId: '1' })}
       />
       <Button title="Clear Log" onPress={() => setSteps([])} />
       <Text>{linkToken}</Text>

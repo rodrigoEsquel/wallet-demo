@@ -20,4 +20,3 @@ export const getKycUrl = async (userId: string): Promise<string> => {
     throw new Error('Fetch failed to ' + IP + ':' + PORT);
   }
 };
-
